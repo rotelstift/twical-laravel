@@ -15,3 +15,4 @@ use App\Http\Controllers\CalendarController;
 */
 
 Route::get('/', [CalendarController::class, 'show']);
+Route::get('/{year}/{month}', [CalendarController::class, 'past']);
