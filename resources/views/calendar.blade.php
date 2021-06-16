@@ -10,14 +10,37 @@
         <div id="calendar-table">
             <table>
                 <th>
-                    <tr>日</tr>
-                    <tr>月</tr>
-                    <tr>火</tr>
-                    <tr>水</tr>
-                    <tr>木</tr>
-                    <tr>金</tr>
-                    <tr>土</tr>
+                    <tr>
+                        <td>日</td>
+                        <td>月</td>
+                        <td>火</td>
+                        <td>水</td>
+                        <td>木</td>
+                        <td>金</td>
+                        <td>土</td>
+                    </tr>
                 </th>
+                <tr>
+                    @foreach ($days as $day)
+                        @if ($loop->first)
+                            @for ($i = 0; $i < $day->dayOfWeek; $i++)
+                                <td></td>
+                            @endfor
+                        @endif
+                        @if ($day->dayOfWeek === 0)
+                            <tr>
+                        @endif
+                            <td>{{ $day->day }}</td>
+                        @if ($day->dayOfWeek === 6)
+                            </tr>
+                        @endif
+                        @if ($loop->last)
+                            @for ($i = $day->dayOfWeek; $i < 6; $i++)
+                                <td></td>
+                            @endfor
+                        @endif
+                    @endforeach
+                </tr>
             </table>
         </div>
     </body>
