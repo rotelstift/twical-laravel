@@ -14,11 +14,11 @@ class CalendarController extends Controller
         return view("calendar", [
             'year' => $today->year,
             'month' => $today->month,
-            'days' => $this->makeCalendar($today),
-            'nextYearPath' => $this->makeNextYearPath($today->copy()),
-            'prevYearPath' => $this->makePrevYearPath($today->copy()),
-            'nextMonthPath' => $this->makeNextMonthPath($today->copy()),
-            'prevMonthPath' => $this->makePrevMonthPath($today->copy())
+            'days' => $this->calendar($today),
+            'nextYearPath' => $this->nextYearPath($today->copy()),
+            'prevYearPath' => $this->prevYearPath($today->copy()),
+            'nextMonthPath' => $this->nextMonthPath($today->copy()),
+            'prevMonthPath' => $this->prevMonthPath($today->copy())
         ]);
     }
     
@@ -36,11 +36,11 @@ class CalendarController extends Controller
                 return view("calendar", [
                 'year' => $baseDate->year,
                 'month' => $baseDate->month,
-                'days' => $this->makeCalendar($baseDate),
-                'nextYearPath' => $this->makeNextYearPath($baseDate->copy()),
-                'prevYearPath' => $this->makePrevYearPath($baseDate->copy()),
-                'nextMonthPath' => $this->makeNextMonthPath($baseDate->copy()),
-                'prevMonthPath' => $this->makePrevMonthPath($baseDate->copy())
+                'days' => $this->calendar($baseDate),
+                'nextYearPath' => $this->nextYearPath($baseDate->copy()),
+                'prevYearPath' => $this->prevYearPath($baseDate->copy()),
+                'nextMonthPath' => $this->nextMonthPath($baseDate->copy()),
+                'prevMonthPath' => $this->prevMonthPath($baseDate->copy())
 
             ]);
         }
@@ -51,7 +51,7 @@ class CalendarController extends Controller
      * @param Carbon
      * @return Array
      */
-    private function makeCalendar($baseDate)
+    private function calendar($baseDate)
     {
         $days[] = $baseDate->copy()->startOfMonth();
 
@@ -66,7 +66,7 @@ class CalendarController extends Controller
      * @param Carbon
      * @return String
      */
-    private function makeNextYearPath($baseDate)
+    private function nextYearPath($baseDate)
     {
         $nextYearDate = $baseDate->addYearNoOverflow();
         
@@ -80,7 +80,7 @@ class CalendarController extends Controller
      * 
      * 
      */
-    private function makePrevYearPath($baseDate)
+    private function prevYearPath($baseDate)
     {
         $prevYearDate = $baseDate->subYearNoOverflow();
 
@@ -95,7 +95,7 @@ class CalendarController extends Controller
      * @param Carbon
      * @return String
      */
-    private function makeNextMonthPath($baseDate)
+    private function nextMonthPath($baseDate)
     {
         $nextMonthDate = $baseDate->addMonthNoOverflow();
         
@@ -110,7 +110,7 @@ class CalendarController extends Controller
      * @param Carbon
      * @return String
      */
-    private function makePrevMonthPath($baseDate)
+    private function prevMonthPath($baseDate)
     {
         $prevMonthDate = $baseDate->subMonthNoOverflow();
         
