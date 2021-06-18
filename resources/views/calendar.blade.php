@@ -6,7 +6,8 @@
     </head>
     <body>
         <h1>Twical</h1>
-        <h2>{{$year}}年 {{$month}}月</h2>
+        <h2><a href="{{$prevYearPath}}"><</a> {{$year}}年 <a href="{{$nextYearPath}}">></a></h2>
+        <h2><a href="{{$prevMonthPath}}"><</a> {{$month}}月 <a href="{{$nextMonthPath}}">></a></h2>
         <div id="calendar-table">
             <table>
                 <th>
