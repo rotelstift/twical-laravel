@@ -3,7 +3,7 @@ name: Laravel
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     types:
         - opened
