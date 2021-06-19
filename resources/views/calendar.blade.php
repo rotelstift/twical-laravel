@@ -1,26 +1,38 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>Twical</title>
-    </head>
-    <body>
-        <h1>Twical</h1>
-        <h2><a href="{{$prevYearPath}}"><</a> {{$year}}年 <a href="{{$nextYearPath}}">></a></h2>
-        <h2><a href="{{$prevMonthPath}}"><</a> {{$month}}月 <a href="{{$nextMonthPath}}">></a></h2>
-        <div id="calendar-table">
-            <table>
-                <th>
-                    <tr>
-                        <td>日</td>
-                        <td>月</td>
-                        <td>火</td>
-                        <td>水</td>
-                        <td>木</td>
-                        <td>金</td>
-                        <td>土</td>
-                    </tr>
-                </th>
+@extends('parts.layout')
+@section('content')
+    @include('parts.tweets')
+    <h2 class="text-center">
+        <div class="badge bg-primary text-wrap">
+            <a href="{{$prevYearPath}}" class="link-light text-decoration-none"><</a>
+        </div>
+        {{$year}}年
+        <div class="badge bg-primary text-wrap">
+            <a href="{{$nextYearPath}}" class="link-light text-decoration-none">></a>
+        </div>
+    </h2>
+    <h2 class="text-center">
+        <div class="badge bg-primary text-wrap">
+            <a href="{{$prevMonthPath}}" class="link-light text-decoration-none"><</a>
+        </div>
+        {{$month}}月
+        <div class="badge bg-primary text-wrap">
+            <a href="{{$nextMonthPath}}" class="link-light text-decoration-none">></a>
+        </div>
+    </h2>
+    <div id="calendar-table" class="p-2">
+        <table class="table table-bordered">
+            <thead class="table-light text-center">
+                <tr>
+                    <td>日</td>
+                    <td>月</td>
+                    <td>火</td>
+                    <td>水</td>
+                    <td>木</td>
+                    <td>金</td>
+                    <td>土</td>
+                </tr>
+            </thead>
+            <tbody>
                 <tr>
                     @foreach ($days as $day)
                         @if ($loop->first)
@@ -31,7 +43,14 @@
                         @if ($day->dayOfWeek === 0)
                             <tr>
                         @endif
-                            <td>{{ $day->day }}</td>
+                            <td class="p-0">
+                                <div class="text-end me-1">
+                                     {{ $day->day }}
+                                </div>
+                                <div class="text-center mb-3">
+                                    <a herf="#" data-bs-toggle="modal" class=" btn btn-outline-primary" data-bs-target="#tweetsModal">43</a>
+                                </div>
+                            </td>
                         @if ($day->dayOfWeek === 6)
                             </tr>
                         @endif
@@ -42,7 +61,7 @@
                         @endif
                     @endforeach
                 </tr>
-            </table>
-        </div>
-    </body>
-</html>
+            </tbody>
+        </table>
+    </div>
+@endsection
