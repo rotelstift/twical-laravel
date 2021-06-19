@@ -4,3 +4,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Twical</title>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@kze_yoshi8" />
+<meta property="og:title" content="Twical" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ url('/', null, true) }}" />
+<meta property="og:image" content="{{ asset('image/twical.png') }}" />
+<meta property="og:image:width" content="1200" /> 
+<meta property="og: image:height" content="630" />
+<meta property="og:site name" content="Twical" />
+<meta property="og:description" content="日毎の Twitter のツイート数をカレンダー形式で表示するサイトです。" />

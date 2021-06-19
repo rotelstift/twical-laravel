@@ -1,4 +1,4 @@
-<button class="navbar-toggler collapsed text-light me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+<button class="navbar-toggler collapsed text-light me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     Menu
 </button>
 <div class="navbar-collapse collapse" id="navbarCollapse" style="">
