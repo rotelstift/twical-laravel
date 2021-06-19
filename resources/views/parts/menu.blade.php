@@ -10,4 +10,4 @@
             <a class="nav-link link-light" href="/help">Help</a>
         </li>
     </ul>
-  </div>
+</div>
