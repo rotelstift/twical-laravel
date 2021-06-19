@@ -48,7 +48,7 @@
                                      {{ $day->day }}
                                 </div>
                                 <div class="text-center mb-3">
-                                    <a herf="#" data-bs-toggle="modal" data-bs-target="#tweetsModal">43</a>
+                                    <a herf="#" data-bs-toggle="modal" class=" btn btn-outline-primary" data-bs-target="#tweetsModal">43</a>
                                 </div>
                             </td>
                         @if ($day->dayOfWeek === 6)

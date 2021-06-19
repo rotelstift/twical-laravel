@@ -4,7 +4,7 @@
 <div class="navbar-collapse collapse" id="navbarCollapse" style="">
     <ul class="navbar-nav me-auto mb-md-0">
         <li class="nav-item mx-5">
-            <a class="nav-link active btn btn-light link-success" aria-current="page" href="/login">Login</a>
+            <a class="nav-link active btn btn-light" aria-current="page" href="/login">Login</a>
         </li>
         <li class="nav-item text-center">
             <a class="nav-link link-light" href="/help">Help</a>
