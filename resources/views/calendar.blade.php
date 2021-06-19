@@ -1,5 +1,6 @@
 @extends('parts.layout')
 @section('content')
+    @include('parts.tweets')
     <h2 class="text-center">
         <div class="badge bg-primary text-wrap">
             <a href="{{$prevYearPath}}" class="link-light text-decoration-none"><</a>
@@ -47,7 +48,7 @@
                                      {{ $day->day }}
                                 </div>
                                 <div class="text-center mb-3">
-                                    43
+                                    <a herf="#" data-bs-toggle="modal" data-bs-target="#tweetsModal">43</a>
                                 </div>
                             </td>
                         @if ($day->dayOfWeek === 6)
