@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\TwitterLoginController;
 
@@ -18,7 +19,6 @@ use App\Http\Controllers\TwitterLoginController;
 Route::get('/', [CalendarController::class, 'show']);
 Route::get('/{year}/{month}', [CalendarController::class, 'past']);
 
-Route::controller(TwitterLoginController::class)->group(function(){
-    Route::get('login/twitter', 'redirectToTwitter')->name('login.twitter');
-    Route::get('login/twitter/callback', 'handleTwitterCallback');
-});
+Route::get('/login', [LoginController::class, 'login']);
+Route::get('/login/twitter', [TwitterLoginController::class, 'redirectToTwitter'])->name('login.twitter');
+Route::get('/login/twitter/callback', [TwitterLoginController::class, 'handleTwitterCallback']);
