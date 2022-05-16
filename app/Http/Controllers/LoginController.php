@@ -6,7 +6,6 @@ class LoginController extends Controller
 {
     public function login()
     {
-        $hoge = "hoge";
-        return $hoge;
+        return view('login');
     }
 }
