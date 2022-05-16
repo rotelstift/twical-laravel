@@ -42,8 +42,8 @@ class TwitterLoginController extends Controller
             dd($e->getMessage());
         }
 
-            Auth::login($user);
+        Auth::login($user);
 
-            return redirect('/');
+        return redirect('/');
     }
 }
