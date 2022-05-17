@@ -17,8 +17,9 @@ use App\Http\Controllers\TwitterLoginController;
 */
 
 Route::get('/', [CalendarController::class, 'show']);
-Route::get('/{year}/{month}', [CalendarController::class, 'past']);
 
 Route::get('/login', [LoginController::class, 'login']);
 Route::get('/login/twitter', [TwitterLoginController::class, 'redirectToTwitter'])->name('login.twitter');
 Route::get('/login/twitter/callback', [TwitterLoginController::class, 'handleTwitterCallback']);
+
+Route::get('/{year}/{month}', [CalendarController::class, 'past']);
