@@ -19,6 +19,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'twitter_id',
+        'refresh_token',
     ];
 
     /**
@@ -27,6 +28,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
+        'refresh_token',
         'remember_token',
     ];
 
